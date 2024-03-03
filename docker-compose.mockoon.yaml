@@ -7,12 +7,12 @@ services:
     command: ["-d", "/apiMocks"]
     networks: [default, ddev_default]
     restart: "no"
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
 
     volumes:
     - ".:/mnt/ddev_config"
-    - "../apiMocks:/mnt/ddev_config"
+    - "../apiMocks:/apiMocks"

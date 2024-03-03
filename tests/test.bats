@@ -3,6 +3,7 @@ setup() {
   export DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )/.."
   export TESTDIR=~/tmp/test-mockoon
   mkdir -p $TESTDIR
+  copy "${DIR}/../apiMocks" "${TESTDIR}/apiMocks"
   export PROJNAME=test-mockoon
   export DDEV_NON_INTERACTIVE=true
   ddev delete -Oy ${PROJNAME} >/dev/null 2>&1 || true
